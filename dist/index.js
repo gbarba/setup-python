@@ -1002,7 +1002,7 @@ function _findMatch(versionSpec, stable, candidates, archFilter) {
             if (semver.satisfies(version, versionSpec) &&
                 (!stable || candidate.stable === stable)) {
                 file = candidate.files.find(item => {
-                    core_1.debug(`${item.arch}===${archFilter} && ${item.platform}===${platFilter}`);
+                  core_1.debug(`${item.arch}===${archFilter} && ${item.platform}===${platFilter} and platform_version=${item.platform_version}--`);
                     let chk = item.arch === archFilter && item.platform === platFilter;
                     if (chk && item.platform_version) {
                         const osVersion = module.exports._getOsVersion();
